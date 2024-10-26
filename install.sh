@@ -7,7 +7,7 @@ echo "Создание директорий для конфигурации... (
 mkdir -p ~/.config/bspwm
 
 echo "Клонирование конфигурационных файлов... ( bspwmrc, sxhkdrc, .xsession )"
-git clone ССЫЛКА ~/Downloads
+git clone  ~/Downloads
 
 echo "Копирование конфигурационных файлов..."
 mv ~/Downloads ~/.config/bspwm/bspwmrc
