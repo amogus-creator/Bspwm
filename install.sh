@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "Установка необходимых зависимостей... ( xorg-server, bspwm, alacritty, sxhkd, git, vim, ly)"
-sudo pacman -S --noconfirm xorg-server bspwm alacritty sxhkd git vim ly
+echo "Установка необходимых зависимостей... ( xorg-server, bspwm, alacritty, sxhkd, vim, ly)"
+sudo pacman -S --noconfirm xorg-server bspwm alacritty sxhkd vim ly
 
 systemctl enable ly.service
 
