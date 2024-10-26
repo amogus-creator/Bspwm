@@ -21,6 +21,17 @@ mv ~/Downloads/bspwm-example/alacritty.toml ~/.config/alacritty/
 mv ~/Downloads/bspwm-example/picom.conf ~/.config/picom/
 mv ~/Downloads/bspwm-example/.xsession ~/
 
+read -p "Хотите установить разрешение экрана 1920x1080 с частотой 144 Гц на HDMI-0? (Y/n): " choice
+choice=${choice:-Y}
+
+if [[ "$choice" == "Y" || "$choice" == "y" ]]; then
+    echo "xrandr --output HDMI-0 --mode 1920x1080 --rate 144" >> ~/.xsession
+elif [[ "$choice" == "N" || "$choice" == "n" ]]; then
+    echo "Установка разрешения экрана пропущена."
+else
+    echo "Неверный ввод. Установка разрешения экрана отклонена."
+fi
+
 chmod +x ~/.config/bspwm/bspwmrc
 chmod +x ~/.xsession
 
