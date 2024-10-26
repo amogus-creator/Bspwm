@@ -37,4 +37,4 @@ move_file() {
             echo "Файл $(basename "$src") уже существует в целевой директории, пропускаем..."
         fi
     else
-        echo "Файл $(basename "$src")
+        echo "Файл $(basename "$src")"
