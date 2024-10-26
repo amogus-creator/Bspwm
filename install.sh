@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Установка необходимых зависимостей... ( xorg-server, bspwm, alacritty, sxhkd, vim, ly, picom, zsh, feh)"
-sudo pacman -S --noconfirm xorg-server xorg-xrandr bspwm alacritty sxhkd vim ly picom feh
+sudo pacman -S --noconfirm bspwm alacritty sxhkd vim ly picom feh
 
 echo "Создание директорий для конфигурации... ( ~/.config/bspwm )"
 mkdir ~/.config/bspwm
@@ -18,6 +18,9 @@ mv ~/Downloads/.xsession ~/
 mv ~/Downloads/x.jpg ~/wallpapers
 
 systemctl enable ly.service
+
+chmod +x ~/.xsession
+chmod +x ~/.config/bspwm/bspwmrc
 
 read -p "Хотите установить yay? (Y/n): " choice
 choice=${choice:-Y}
