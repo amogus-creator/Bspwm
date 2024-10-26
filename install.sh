@@ -52,7 +52,9 @@ read -p "Хотите установить разрешение экрана 192
 choice=${choice:-Y}
 
 if [[ "$choice" == "Y" || "$choice" == "y" ]]; then
-    sed -i '/^exec bspwm/i xrandr --output HDMI-0 --mode 1920x1080 --rate 144' ~/.xsession
+     sed -i '/^exec bspwm/i\' ~/.xsession
+     sed -i '/^exec bspwm/i xrandr --output HDMI-0 --mode 1920x1080 --rate 144' ~/.xsession
+     sed -i '/^exec bspwm/a\' ~/.xsession 
 elif [[ "$choice" == "N" || "$choice" == "n" ]]; then
     echo "Установка разрешения экрана пропущена."
 else
