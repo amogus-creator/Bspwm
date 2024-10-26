@@ -23,6 +23,17 @@ mv ~/Downloads/bspwm-example/picom.conf ~/.config/picom/
 mv ~/Downloads/bspwm-example/.xsession ~/
 mv ~/Downloads/bspwm-example/x.jpg ~/wallpapers
 
+read -p "Хотите установить nvidia-settngs с конфигурацией на производительность? (Y/n): " choice
+choice=${choice:-Y}
+
+if [[ "$choice" == "Y" || "$choice" == "y" ]]; then
+    sudo pacman -S --noconfirm nvidia-settings && mv ~/Downloads/bspwm-example/.nvidia-settings-rc ~/
+elif [[ "$choice" == "N" || "$choice" == "n" ]]; then
+    echo "Установка разрешения экрана пропущена."
+else
+    echo "Неверный ввод. Установка разрешения экрана отклонена."
+fi
+
 read -p "Хотите установить разрешение экрана 1920x1080 с частотой 144 Гц на HDMI-0? (Y/n): " choice
 choice=${choice:-Y}
 
