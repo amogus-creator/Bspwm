@@ -45,3 +45,5 @@ echo '' >> ~/.xsession
 echo 'exec bspwm' >> ~/.xsession
 
 chmod +x ~/.xsession
+
+systemctl enable ly.service
