@@ -19,11 +19,20 @@ mv ~/Downloads/picom.conf ~/.config/picom/
 mv ~/Downloads/.xsession ~/
 mv ~/Downloads/x.jpg ~/wallpapers
 
+read -p "Хотите установить yay? (Y/n): " choice
+choice=${choice:-Y}
+
+if [[ "$choice" == "Y" || "$choice" == "y" ]]; then
 echo "Установка yay..."
 sudo pacman -S --noconfirm git base-devel
 git clone https://aur.archlinux.org/yay.git ~/yay
 cd ~/yay || { echo "Не удалось перейти в папку yay."; exit 1; }
 makepkg -si --noconfirm
+elif [[ "$choice" == "N" || "$choice" == "n" ]]; then
+    echo "Установка пропущена."
+else
+    echo "Неверный ввод. Установка отклонена."
+fi
 
 read -p "Хотите установить nvidia-settngs с конфигурацией на производительность? (Y/n): " choice
 choice=${choice:-Y}
