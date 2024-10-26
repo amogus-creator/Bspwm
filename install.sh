@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Установка необходимых зависимостей... ( xorg-server, bspwm, alacritty, sxhkd, vim, ly, picom, zsh, feh)"
-sudo pacman -S --noconfirm xorg-server bspwm alacritty sxhkd vim ly picom zsh feh
+sudo pacman -S --noconfirm xorg-server xorg-xrandr bspwm alacritty sxhkd vim ly picom zsh feh
 
 chsh -s $(which zsh)
 
