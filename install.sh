@@ -12,12 +12,12 @@ mkdir -p ~/.config/picom
 mkdir -p ~/wallpapers
 
 echo "Копирование конфигурационных файлов..."
-mv ~/Downloads/bspwm-example/bspwmrc ~/.config/bspwm/
-mv ~/Downloads/bspwm-example/sxhkdrc ~/.config/bspwm/
-mv ~/Downloads/bspwm-example/alacritty.toml ~/.config/alacritty/
-mv ~/Downloads/bspwm-example/picom.conf ~/.config/picom/
-mv ~/Downloads/bspwm-example/.xsession ~/
-mv ~/Downloads/bspwm-example/x.jpg ~/wallpapers
+mv ~/Downloads/bspwmrc ~/.config/bspwm/
+mv ~/Downloads/sxhkdrc ~/.config/bspwm/
+mv ~/Downloads/alacritty.toml ~/.config/alacritty/
+mv ~/Downloads/picom.conf ~/.config/picom/
+mv ~/Downloads/.xsession ~/
+mv ~/Downloads/x.jpg ~/wallpapers
 
 echo "Установка yay..."
 sudo pacman -S --noconfirm git base-devel
