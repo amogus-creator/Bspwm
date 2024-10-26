@@ -13,6 +13,7 @@ echo "Создание директорий для конфигурации... (
 mkdir -p ~/.config/bspwm
 mkdir -p ~/.config/alacritty
 mkdir -p ~/.config/picom
+mkdir -p ~/wallpapers
 
 echo "Копирование конфигурационных файлов..."
 mv ~/Downloads/bspwm-example/bspwmrc ~/.config/bspwm/
