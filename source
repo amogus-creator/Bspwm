@@ -6,7 +6,7 @@ sudo pacman -S --noconfirm xorg-server bspwm alacritty sxhkd git vim
 echo "Создание директорий для конфигурации... ( ~/.config/bspwm )"
 mkdir -p ~/.config/bspwm
 
-echo "Клонирование конфигурационных файлов... ( bspwmrc и sxhkdrc )"
+echo "Клонирование конфигурационных файлов... ( bspwmrc, sxhkdrc, .xsession )"
 git clone ССЫЛКА ~/Downloads
 
 echo "Копирование конфигурационных файлов..."
