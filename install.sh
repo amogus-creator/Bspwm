@@ -21,7 +21,7 @@ mv ~/Downloads/sxhkdrc ~/.config/bspwm
 sleep 1
 mv ~/Downloads/picom.conf ~/.config/picom
 sleep 1
-mv ~/Downloads/alacritty.yml ~/.config/alacritty
+mv ~/Downloads/alacritty.toml ~/.config/alacritty
 sleep 1
 mv ~/Downloads/x.jpg ~/wallpapers
 sleep 1
