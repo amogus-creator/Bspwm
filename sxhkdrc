@@ -1,5 +1,11 @@
 F1
   alacritty
+F8 + F9
+  poweroff
+super + r
+  ranger
+super + c
+  alacritty -e cava
 super + q
   firefox
 super + Left
