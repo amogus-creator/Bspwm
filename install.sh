@@ -3,10 +3,6 @@
 echo "Установка необходимых зависимостей... ( xorg-server, bspwm, alacritty, sxhkd, vim, ly, picom, zsh, feh)"
 sudo pacman -S --noconfirm xorg-server xorg-xrandr bspwm alacritty sxhkd vim ly picom zsh feh
 
-chsh -s $(which zsh)
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 systemctl enable ly.service
 
 echo "Создание директорий для конфигурации... ( ~/.config/bspwm )"
