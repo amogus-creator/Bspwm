@@ -29,7 +29,7 @@ read -p "Хотите установить nvidia-settngs с конфигура�
 choice=${choice:-Y}
 
 if [[ "$choice" == "Y" || "$choice" == "y" ]]; then
-    sudo pacman -S --noconfirm nvidia-settings && mv ~/Downloads/bspwm-example/.nvidia-settings-rc ~/
+    sudo pacman -S --noconfirm nvidia-settings nvidia-utils && mv ~/Downloads/bspwm-example/.nvidia-settings-rc ~/
 elif [[ "$choice" == "N" || "$choice" == "n" ]]; then
     echo "Установка разрешения экрана пропущена."
 else
