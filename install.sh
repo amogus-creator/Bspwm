@@ -1,40 +1,36 @@
 #!/bin/bash
 
-# Проверка, что скрипт не запускается от имени root
 if [ "$(id -u)" = 0 ]; then
     echo "Этот скрипт НЕ должен запускаться от имени пользователя root."
     exit 1
 fi
 
-# Логирование
-exec > >(tee -i install_log.txt)
-exec 2>&1
-
-# Установка необходимых пакетов
-echo "Установка необходимых пакетов..."
-for pkg in bspwm alacritty sxhkd vim ly ttf-dejavu; do
+sleep 1
+for pkg in bspwm alacritty sxhkd vim ly ttf-dejavu picom feh; do
     if ! pacman -Qs $pkg > /dev/null; then
         echo "Установка $pkg..."
+        sleep 1
         sudo pacman -S --noconfirm $pkg || { echo "Ошибка установки $pkg"; exit 1; }
+        sleep 1
     else
         echo "$pkg уже установлен."
+        sleep 1
     fi
-done
 
-# Создание директории конфигурации
-echo "Создание директории конфигурации..."
-mkdir -p ~/.config/bspwm
+mkdir -p ~/.config/bspwm ~/.config/picom ~/.config/alacritty ~/wallpapers
+sleep 1
 
-# Функция для перемещения файлов
-move_file() {
-    local src="$1"
-    local dest="$2"
-    if [ -f "$src" ]; then
-        if [ ! -f "$dest" ]; then
-            mv "$src" "$dest" || { echo "Ошибка при перемещении $src"; exit 1; }
-            echo "Файл $(basename "$src") перемещен."
-        else
-            echo "Файл $(basename "$src") уже существует в целевой директории, пропускаем..."
-        fi
-    else
-        echo "Файл $(basename "$src")"
+echo "Перемещение конфигурационных файлов..."
+mv ~/Downloads/bspwmrc ~/.config/bspwm
+sleep 1
+mv ~/Downloads/sxhkdrc ~/.config/bspwm
+sleep 1
+mv ~/Downloads/picom.conf ~/.config/picom
+sleep 1
+mv ~/Downloads/alacritty.yml ~/.config/alacritty
+sleep 1
+mv ~/Downloads/x.jpg ~/wallpapers
+sleep 1
+
+mv ~/Downloads/xsession ~/
+sleep 1
