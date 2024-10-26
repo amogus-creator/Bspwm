@@ -10,11 +10,11 @@ for pkg in bspwm alacritty sxhkd vim ly ttf-dejavu picom feh; do
         echo "$pkg уже установлен."
         sleep 1
     fi
+done
 
 mkdir -p ~/.config/bspwm ~/.config/picom ~/.config/alacritty ~/wallpapers
 sleep 1
 
-echo "Перемещение конфигурационных файлов..."
 mv ~/Downloads/bspwmrc ~/.config/bspwm
 sleep 1
 mv ~/Downloads/sxhkdrc ~/.config/bspwm
@@ -25,5 +25,23 @@ mv ~/Downloads/alacritty.yml ~/.config/alacritty
 sleep 1
 mv ~/Downloads/x.jpg ~/wallpapers
 sleep 1
-mv ~/Downloads/.xsession ~/
-sleep 1
+
+chmod +x ~/.config/bspwm/bspwmrc
+
+touch ~/.xsession
+
+echo '#!/bin/bash' > ~/.xsession
+echo '' >> ~/.xsession
+echo 'sxhkd -c ~/.config/bspwm/sxhkdrc' >> ~/.xsession
+echo '' >> ~/.xsession
+echo 'setxkbmap -layout "us,ru" -option "grp:alt_shift_toggle"' >> ~/.xsession
+echo '' >> ~/.xsession
+echo 'systemctl --user restart pipewire' >> ~/.xsession
+echo '' >> ~/.xsession
+echo 'picom --config ~/.config/picom/picom.conf &' >> ~/.xsession
+echo '' >> ~/.xsession
+echo 'feh --bg-scale ~/wallpapers/x.jpg &' >> ~/.xsession
+echo '' >> ~/.xsession
+echo 'exec bspwm' >> ~/.xsession
+
+chmod +x ~/.xsession
