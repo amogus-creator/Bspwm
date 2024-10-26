@@ -3,13 +3,11 @@
 echo "Установка необходимых зависимостей... ( xorg-server, bspwm, alacritty, sxhkd, vim, ly, picom, zsh, feh)"
 sudo pacman -S --noconfirm xorg-server xorg-xrandr bspwm alacritty sxhkd vim ly picom feh
 
-systemctl enable ly.service
-
 echo "Создание директорий для конфигурации... ( ~/.config/bspwm )"
-mkdir -p ~/.config/bspwm
-mkdir -p ~/.config/alacritty
-mkdir -p ~/.config/picom
-mkdir -p ~/wallpapers
+mkdir ~/.config/bspwm
+mkdir ~/.config/alacritty
+mkdir ~/.config/picom
+mkdir ~/wallpapers
 
 echo "Копирование конфигурационных файлов..."
 mv ~/Downloads/bspwmrc ~/.config/bspwm/
@@ -18,6 +16,8 @@ mv ~/Downloads/alacritty.toml ~/.config/alacritty/
 mv ~/Downloads/picom.conf ~/.config/picom/
 mv ~/Downloads/.xsession ~/
 mv ~/Downloads/x.jpg ~/wallpapers
+
+systemctl enable ly.service
 
 read -p "Хотите установить yay? (Y/n): " choice
 choice=${choice:-Y}
@@ -38,7 +38,7 @@ read -p "Хотите установить nvidia-settngs с конфигура�
 choice=${choice:-Y}
 
 if [[ "$choice" == "Y" || "$choice" == "y" ]]; then
-    sudo pacman -S --noconfirm linux-headers dkms nvidia-dkms nvidia-settings nvidia-utils && mv ~/Downloads/bspwm-example/.nvidia-settings-rc ~/
+    mv ~/Downloads/bspwm-example/.nvidia-settings-rc ~/
 elif [[ "$choice" == "N" || "$choice" == "n" ]]; then
     echo "Установка разрешения экрана пропущена."
 else
@@ -55,9 +55,6 @@ elif [[ "$choice" == "N" || "$choice" == "n" ]]; then
 else
     echo "Неверный ввод. Установка разрешения экрана отклонена."
 fi
-
-chmod +x ~/.config/bspwm/bspwmrc
-chmod +x ~/.xsession
 
 read -p "Хотите установить firefox-bin? (Y/n): " choice
 choice=${choice:-Y}
