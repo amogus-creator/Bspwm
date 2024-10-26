@@ -54,8 +54,8 @@ read -p "Хотите установить firefox-bin? (Y/n): " choice
 choice=${choice:-Y}
 
 if [[ "$choice" == "Y" || "$choice" == "y" ]]; then
-echo "Установка необходимых зависимостей... (curl, tar, alsa-lib)"
-sudo pacman -S --noconfirm curl tar alsa-lib
+echo "Установка необходимых зависимостей... (curl, tar, alsa-lib, gtk3)"
+sudo pacman -S --noconfirm curl tar alsa-lib gtk3
 
 cd ~/Downloads || { echo "Не удалось перейти в папку загрузок. ~/Downloads"; exit 1; }
 
