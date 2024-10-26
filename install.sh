@@ -1,11 +1,5 @@
 #!/bin/bash
 
-if [ "$(id -u)" = 0 ]; then
-    echo "Этот скрипт НЕ должен запускаться от имени пользователя root."
-    exit 1
-fi
-
-sleep 1
 for pkg in bspwm alacritty sxhkd vim ly ttf-dejavu picom feh; do
     if ! pacman -Qs $pkg > /dev/null; then
         echo "Установка $pkg..."
@@ -31,6 +25,5 @@ mv ~/Downloads/alacritty.yml ~/.config/alacritty
 sleep 1
 mv ~/Downloads/x.jpg ~/wallpapers
 sleep 1
-
-mv ~/Downloads/xsession ~/
+mv ~/Downloads/.xsession ~/
 sleep 1
