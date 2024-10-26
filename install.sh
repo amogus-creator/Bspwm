@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "Установка необходимых зависимостей... ( xorg-server, bspwm, alacritty, sxhkd, vim, ly, picom, zsh, feh)"
-sudo pacman -S --noconfirm bspwm alacritty sxhkd vim ly picom feh
+echo "Установка необходимых зависимостей... ( xorg-server, bspwm, alacritty, sxhkd, vim, ly, picom, feh, ttf-dejavu)"
+sudo pacman -S --noconfirm bspwm alacritty sxhkd vim ly picom feh ttf-dejavu
 
 echo "Создание директорий для конфигурации... ( ~/.config/bspwm )"
 mkdir ~/.config/bspwm
