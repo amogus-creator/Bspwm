@@ -1,0 +1,9 @@
+#!/bin/bash
+
+bspc monitor -d I II III
+
+bspc config focus_follows_pointer true
+
+bspc border_width 3
+
+bspc config window_gap 3
