@@ -23,6 +23,12 @@ mv ~/Downloads/bspwm-example/picom.conf ~/.config/picom/
 mv ~/Downloads/bspwm-example/.xsession ~/
 mv ~/Downloads/bspwm-example/x.jpg ~/wallpapers
 
+echo "Установка yay..."
+sudo pacman -S --noconfirm git base-devel
+git clone https://aur.archlinux.org/yay.git ~/yay
+cd ~/yay || { echo "Не удалось перейти в папку yay."; exit 1; }
+makepkg -si --noconfirm
+
 read -p "Хотите установить nvidia-settngs с конфигурацией на производительность? (Y/n): " choice
 choice=${choice:-Y}
 
