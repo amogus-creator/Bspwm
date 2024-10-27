@@ -80,7 +80,6 @@ else
     echo "Установка nvidia-settings отменена."
 fi
 
-
 sudo pacman -S ly
 systemctl enable ly.service
 
