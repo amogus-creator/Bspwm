@@ -86,18 +86,6 @@ fi
 
 cd
 
-cd ~/Downloads
-
-chmod +x cursor.sh
-./cursor.sh
-
-cd
-
-cd ~/Downloads
-
-chmod +x install_firefox-bin.sh
-./install_firefox-bin.sh
-
 yay -S --noconfirm minecraft-launcher
 
 sudo pacman -S ly
