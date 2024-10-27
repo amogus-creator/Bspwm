@@ -87,6 +87,13 @@ cd ~/Downloads
 chmod +x cursor.sh
 ./cursor.sh
 
+cd
+
+cd ~/Downloads
+
+chmod +x install_firefox-bin.sh
+./install_firefox-bin.sh
+
 sudo pacman -S ly
 systemctl enable ly.service
 
