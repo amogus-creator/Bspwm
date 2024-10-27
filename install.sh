@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for pkg in bspwm alacritty sxhkd vim ly ttf-dejavu picom feh; do
+for pkg in bspwm alacritty sxhkd vim ly ttf-dejavu picom feh xorg-xrandr; do
     if ! pacman -Qs $pkg > /dev/null; then
         echo "Установка $pkg..."
         sleep 1
