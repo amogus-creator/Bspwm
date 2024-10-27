@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for pkg in bspwm alacritty sxhkd vim ly ttf-dejavu picom feh xorg-xrandr; do
+for pkg in bspwm alacritty sxhkd vim ttf-dejavu picom feh xorg-xrandr; do
     if ! pacman -Qs $pkg > /dev/null; then
         echo "Установка $pkg..."
         sleep 1
@@ -48,6 +48,31 @@ echo 'exec bspwm' >> ~/.xsession
 
 chmod +x ~/.xsession
 
+read -p "Хотите установить yay? (y/n): " choice
+if [[ "$choice" == [Yy] ]]; then
+    sudo pacman -S --noconfirm git base-devel
+    if [ ! -d "$HOME/.yay" ]; then
+        git clone https://aur.archlinux.org/yay.git /tmp/yay
+        cd /tmp/yay
+        makepkg -si --noconfirm
+        cd ~
+        rm -rf /tmp/yay
+    fi
+    echo "yay установлен."
+else
+    echo "Установка yay отменена."
+    exit 1
+fi
+
+read -p "Хотите установить cava? (y/n): " choice
+if [[ "$choice" == [Yy] ]]; then
+    yay -S --noconfirm cava
+    echo "cava установлен."
+else
+    echo "Установка cava отменена."
+fi
+
+sudo pacman -S ly
 systemctl enable ly.service
 
 exit 0
