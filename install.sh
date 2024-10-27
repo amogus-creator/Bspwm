@@ -40,6 +40,8 @@ echo 'systemctl --user restart pipewire' >> ~/.xsession
 echo '' >> ~/.xsession
 echo 'picom --config ~/.config/picom/picom.conf &' >> ~/.xsession
 echo '' >> ~/.xsession
+echo 'xrandr --output HDMI-0 --mode 1920x1080 --rate 144' >> ~/.xsession
+echo '' >> ~/.xsession
 echo 'feh --bg-scale ~/wallpapers/x.jpg &' >> ~/.xsession
 echo '' >> ~/.xsession
 echo 'exec bspwm' >> ~/.xsession
