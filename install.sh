@@ -30,7 +30,7 @@ chmod +x ~/.config/bspwm/bspwmrc
 
 touch ~/.xsession
 
-echo '#!/bin/bash' > ~/.xsession
+echo '#!/bin/bash' >> ~/.xsession
 echo '' >> ~/.xsession
 echo 'sxhkd -c ~/.config/bspwm/sxhkdrc' >> ~/.xsession
 echo '' >> ~/.xsession
