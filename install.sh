@@ -72,7 +72,18 @@ else
     echo "Установка cava отменена."
 fi
 
+read -p "Хотите установить nvidia-settings? (y/n): " choice
+if [[ "$choice" == [Yy] ]]; then
+    sudo pacman -S --noconfirm nvidia-settings
+    echo "nvidia-settings установлен."
+else
+    echo "Установка nvidia-settings отменена."
+fi
+
+
 sudo pacman -S ly
 systemctl enable ly.service
+
+rm -rf ~/Downloads/*
 
 exit 0
