@@ -97,6 +97,4 @@ chmod +x install_firefox-bin.sh
 sudo pacman -S ly
 systemctl enable ly.service
 
-rm -rf ~/Downloads/*
-
 exit 0
