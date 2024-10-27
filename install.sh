@@ -32,7 +32,7 @@ touch ~/.xsession
 
 echo '#!/bin/bash' >> ~/.xsession
 echo '' >> ~/.xsession
-echo 'sxhkd -c ~/.config/bspwm/sxhkdrc' >> ~/.xsession
+echo 'sxhkd -c ~/.config/bspwm/sxhkdrc &' >> ~/.xsession
 echo '' >> ~/.xsession
 echo 'setxkbmap -layout "us,ru" -option "grp:alt_shift_toggle"' >> ~/.xsession
 echo '' >> ~/.xsession
