@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+sudo pacman -S --noconfirm zsh
+
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+chsh -s $(which zsh)
