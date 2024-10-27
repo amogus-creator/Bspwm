@@ -10,7 +10,7 @@ mkdir ~/.config/gtk-3.0
 
 touch ~/.config/gtk-3.0/settings.ini
 
-echo '[Settings] gtk-cursor-theme-name=Nordzy-cursors-white' >> ~/.config/gtk-3.0/settings.ini
+echo -e '[Settings]\ngtk-cursor-theme-name=Nordzy-cursors-white' >> ~/.config/gtk-3.0/settings.ini
 
 touch ~/.gtkrc-2.0
 
