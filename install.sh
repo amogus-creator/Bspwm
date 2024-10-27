@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for pkg in bspwm alacritty sxhkd vim ttf-dejavu picom feh xorg-xsetroot xorg-xrandr; do
+for pkg in bspwm alacritty sxhkd vim ttf-dejavu picom feh gnome-keyring xorg-xsetroot xorg-xrandr; do
     if ! pacman -Qs $pkg > /dev/null; then
         echo "Установка $pkg..."
         sleep 1
@@ -43,6 +43,10 @@ echo '' >> ~/.xsession
 echo 'xrandr --output HDMI-0 --mode 1920x1080 --rate 144' >> ~/.xsession
 echo '' >> ~/.xsession
 echo 'feh --bg-scale ~/wallpapers/x.jpg &' >> ~/.xsession
+echo '' >> ~/.xsession
+echo 'eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg)' >> ~/.xsession
+echo '' >> ~/.xsession
+echo 'export SSH_AUTH_SOCK' >> ~/.xsession
 echo '' >> ~/.xsession
 echo 'exec bspwm' >> ~/.xsession
 
