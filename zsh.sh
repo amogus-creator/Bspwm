@@ -10,7 +10,9 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/cu
 
 chsh -s $(which zsh)
 
-echo "omg theme list"
-echo "установлена тема powerlevel10k"
+if ! grep -q 'ZSH_THEME="powerlevel10k/powerlevel10k"' ~/.zshrc; then
+    echo 'ZSH_THEME="powerlevel10k/powerlevel10k"' >> ~/.zshrc
+fi
 
+echo "Установка завершена. Не забудьте перезапустить терминал или выйти и войти снова."
 
