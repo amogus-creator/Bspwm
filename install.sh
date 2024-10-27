@@ -80,6 +80,13 @@ else
     echo "Установка nvidia-settings отменена."
 fi
 
+cd
+
+cd ~/Downloads
+
+chmod +x cursor.sh
+./cursor.sh
+
 sudo pacman -S ly
 systemctl enable ly.service
 
