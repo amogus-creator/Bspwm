@@ -28,28 +28,6 @@ sleep 1
 
 chmod +x ~/.config/bspwm/bspwmrc
 
-touch ~/.xsession
-
-echo '#!/bin/bash' >> ~/.xsession
-echo '' >> ~/.xsession
-echo 'sxhkd -c ~/.config/bspwm/sxhkdrc &' >> ~/.xsession
-echo '' >> ~/.xsession
-echo 'setxkbmap -layout "us,ru" -option "grp:alt_shift_toggle"' >> ~/.xsession
-echo '' >> ~/.xsession
-echo 'systemctl --user restart pipewire' >> ~/.xsession
-echo '' >> ~/.xsession
-echo 'picom --config ~/.config/picom/picom.conf &' >> ~/.xsession
-echo '' >> ~/.xsession
-echo 'xrandr --output HDMI-0 --mode 1920x1080 --rate 144' >> ~/.xsession
-echo '' >> ~/.xsession
-echo 'feh --bg-scale ~/wallpapers/x.jpg &' >> ~/.xsession
-echo '' >> ~/.xsession
-echo 'eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg)' >> ~/.xsession
-echo '' >> ~/.xsession
-echo 'export SSH_AUTH_SOCK' >> ~/.xsession
-echo '' >> ~/.xsession
-echo 'exec bspwm' >> ~/.xsession
-
 chmod +x ~/.xsession
 
 read -p "Хотите установить yay? (y/n): " choice
