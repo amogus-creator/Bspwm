@@ -3,7 +3,7 @@
 echo "Processor information:"
 cpupower frequency-info
 
-echo -n "Select frequency (Default 2.4GHz | don't forget to append GHz at the end): "
+echo -n "Select frequency (default 2.4GHz | don't forget to append GHz at the end): "
 read frequency
 frequency=${frequency:-2.4GHz}
 
