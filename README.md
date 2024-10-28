@@ -1,3 +1,3 @@
 git clone https://github.com/amogus-creator/Bspwm ~/Downloads
 
-Working scripts -- ./install.sh , ./cursor.sh | ./cursor.sh should be run after the first login, NOT from tty1 / 2 /. .
+Working scripts -- ./install.sh , ./cursor.sh , ./display.sh | ./cursor.sh should be run after the first login, NOT from tty1 / 2 /. .
