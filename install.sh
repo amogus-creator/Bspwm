@@ -12,7 +12,7 @@ for pkg in bspwm alacritty sxhkd vim ttf-dejavu picom feh gnome-keyring xorg-xse
     fi
 done
 
-mkdir -p ~/.config/bspwm ~/.config/picom ~/.config/alacritty ~/wallpapers
+mkdir -p ~/.config/bspwm ~/.config/picom ~/.config/kitty ~/wallpapers
 sleep 1
 
 mv ~/Downloads/bspwmrc ~/.config/bspwm
@@ -21,7 +21,7 @@ mv ~/Downloads/sxhkdrc ~/.config/bspwm
 sleep 1
 mv ~/Downloads/picom.conf ~/.config/picom
 sleep 1
-mv ~/Downloads/alacritty.toml ~/.config/alacritty
+mv ~/Downloads/kitty.conf ~/.config/kitty
 sleep 1
 mv ~/Downloads/x.jpg ~/wallpapers
 sleep 1
