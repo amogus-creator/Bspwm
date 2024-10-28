@@ -16,7 +16,6 @@ if xrandr | grep -q "$OUTPUT"; then
     if xrandr | grep -q "$SELECTED_RESOLUTION" && xrandr | grep -q "${SELECTED_RATE}"; then
         XRANDR_LINE="xrandr --output $OUTPUT --mode $SELECTED_RESOLUTION --rate $SELECTED_RATE"
         sed -i "/^exec bspwm/i $XRANDR_LINE" ~/.xsession
-        echo "Значения добавлены в .xsession перед exec bspwm."
         eval $XRANDR_LINE
     else
         echo "Выбранные значения недоступны."
