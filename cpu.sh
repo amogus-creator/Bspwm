@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo pacman -S --noconfirm cpupower
+
 echo "Processor information:"
 cpupower frequency-info
 
