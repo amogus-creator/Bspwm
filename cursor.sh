@@ -23,3 +23,5 @@ xrdb ~/.Xresources
 echo '' >> ~/.config/bspwm/bspwmrc
 
 echo 'xsetroot -cursor_name left_ptr' >> ~/.config/bspwm/bspwmrc
+
+exit 0
