@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd
+
 for pkg in bspwm alacritty sxhkd vim ttf-dejavu picom feh gnome-keyring xorg-xsetroot xorg-xrandr; do
     if ! pacman -Qs $pkg > /dev/null; then
         echo "Установка $pkg..."
@@ -13,26 +15,26 @@ for pkg in bspwm alacritty sxhkd vim ttf-dejavu picom feh gnome-keyring xorg-xse
 done
 
 mkdir -p ~/.config/bspwm ~/.config/picom ~/.config/kitty ~/wallpapers
-sleep 1
 
 mv ~/Downloads/bspwmrc ~/.config/bspwm
-sleep 1
+
 mv ~/Downloads/sxhkdrc ~/.config/bspwm
-sleep 1
+
 mv ~/Downloads/picom.conf ~/.config/picom
-sleep 1
+
 mv ~/Downloads/kitty.conf ~/.config/kitty
-sleep 1
+
 mv ~/Downloads/x.jpg ~/wallpapers
-sleep 1
+
+mv ~/Downloads/.xsession ~/
 
 chmod +x ~/.config/bspwm/bspwmrc
 
 chmod +x ~/.xsession
 
-read -p "Хотите установить yay? (y/n): " choice
+read -p "Do you want to install yay? (y/n): " choice
 if [[ "$choice" == [Yy] ]]; then
-    sudo pacman -S --noconfirm git base-devel
+    sudo pacman -S --noconfirm base-devel
     if [ ! -d "$HOME/.yay" ]; then
         git clone https://aur.archlinux.org/yay.git /tmp/yay
         cd /tmp/yay
@@ -40,33 +42,44 @@ if [[ "$choice" == [Yy] ]]; then
         cd ~
         rm -rf /tmp/yay
     fi
-    echo "yay установлен."
+    echo "yay is installed."
 else
-    echo "Установка yay отменена."
-    exit 1
+    echo "The installation of yay has been canceled."
 fi
 
-read -p "Хотите установить cava? (y/n): " choice
+read -p "Do you want to install cava? (y/n): " choice
 if [[ "$choice" == [Yy] ]]; then
     yay -S --noconfirm cava
-    echo "cava установлен."
+    echo "cava is installed."
 else
-    echo "Установка cava отменена."
+    echo "The installation of cava has been canceled."
 fi
 
-read -p "Хотите установить nvidia-settings? (y/n): " choice
+read -p "Do you want to install nvidia-settings? (y/n): " choice
 if [[ "$choice" == [Yy] ]]; then
     sudo pacman -S --noconfirm nvidia-settings
-    echo "nvidia-settings установлен."
+    echo "nvidia-settings is installed."
 else
-    echo "Установка nvidia-settings отменена."
+    echo "The installation nvidia-settings has been canceled."
 fi
 
-cd
+read -p "Do you want to install minecraft-launcher? (y/n): " choice
+if [[ "$choice" == [Yy] ]]; then
+    yay -S --noconfirm minecraft-launcher
+    echo "minecraft-launcher is installed."
+else
+    echo "The installation minecraft-launcher has been canceled."
+fi
 
-yay -S --noconfirm minecraft-launcher
+sudo pacman -S --noconfirm ly
 
-sudo pacman -S ly
 systemctl enable ly.service
+
+read -p "Do you want to reboot? (y/n): " choice
+if [[ "$choice" == [Yy] ]]; then
+    sudo reboot
+else
+    echo "The reboot has been canceled."
+fi
 
 exit 0
