@@ -49,7 +49,7 @@ fi
 
 read -p "Do you want to set the custom CPU parameters? (y/n): " choice
 if [[ "$choice" == [Yy] ]]; then
-    ./ПРОЦЕССОР.sh
+    ./cpu.sh
     echo "The parameters have been set."
 else
     echo "The installation of parameters has been skipped."
