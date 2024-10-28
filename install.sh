@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd
+cd ~/Downloads
 
 for pkg in bspwm alacritty sxhkd vim ttf-dejavu picom feh gnome-keyring xorg-xsetroot xorg-xrandr; do
     if ! pacman -Qs $pkg > /dev/null; then
@@ -10,7 +10,6 @@ for pkg in bspwm alacritty sxhkd vim ttf-dejavu picom feh gnome-keyring xorg-xse
         sleep 1
     else
         echo "$pkg already installed."
-        sleep 1
     fi
 done
 
@@ -32,6 +31,20 @@ chmod +x ~/.config/bspwm/bspwmrc
 
 chmod +x ~/.xsession
 
+chmod +x ~/display.sh
+
+chmod +x ~/cursor.sh
+
+#chmod +x ~ фаерфокс
+
+read -p "Do you want to set the custom screen parameters? (y/n): " choice
+if [[ "$choice" == [Yy] ]]; then
+    ./display.sh
+    echo "The parameters have been set."
+else
+    echo "The installation of parameters has been skipped."
+fi
+
 read -p "Do you want to install yay? (y/n): " choice
 if [[ "$choice" == [Yy] ]]; then
     sudo pacman -S --noconfirm base-devel
@@ -44,7 +57,7 @@ if [[ "$choice" == [Yy] ]]; then
     fi
     echo "yay is installed."
 else
-    echo "The installation of yay has been canceled."
+    echo "The installation of yay has been skipped."
 fi
 
 read -p "Do you want to install cava? (y/n): " choice
@@ -52,7 +65,7 @@ if [[ "$choice" == [Yy] ]]; then
     yay -S --noconfirm cava
     echo "cava is installed."
 else
-    echo "The installation of cava has been canceled."
+    echo "The installation of cava has been skipped."
 fi
 
 read -p "Do you want to install nvidia-settings? (y/n): " choice
@@ -60,7 +73,7 @@ if [[ "$choice" == [Yy] ]]; then
     sudo pacman -S --noconfirm nvidia-settings
     echo "nvidia-settings is installed."
 else
-    echo "The installation nvidia-settings has been canceled."
+    echo "The installation nvidia-settings has been skipped."
 fi
 
 read -p "Do you want to install minecraft-launcher? (y/n): " choice
@@ -68,7 +81,7 @@ if [[ "$choice" == [Yy] ]]; then
     yay -S --noconfirm minecraft-launcher
     echo "minecraft-launcher is installed."
 else
-    echo "The installation minecraft-launcher has been canceled."
+    echo "The installation minecraft-launcher has been skipped."
 fi
 
 sudo pacman -S --noconfirm ly
