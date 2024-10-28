@@ -2,7 +2,7 @@
 
 cd ~/Downloads
 
-for pkg in bspwm alacritty sxhkd vim ttf-dejavu picom feh gnome-keyring xorg-xsetroot xorg-xrandr; do
+for pkg in bspwm kitty sxhkd vim ttf-dejavu picom feh gnome-keyring xorg-xsetroot xorg-xrandr; do
     if ! pacman -Qs $pkg > /dev/null; then
         echo "Installation $pkg..."
         sleep 1
@@ -21,7 +21,7 @@ mv ~/Downloads/sxhkdrc ~/.config/bspwm
 
 mv ~/Downloads/picom.conf ~/.config/picom
 
-mv ~/Downloads/kitty.conf ~/.config/kitty
+#mv ~/Downloads/kitty.conf ~/.config/kitty
 
 mv ~/Downloads/x.jpg ~/wallpapers
 
