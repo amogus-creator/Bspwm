@@ -100,11 +100,6 @@ sudo pacman -S --noconfirm ly
 
 systemctl enable ly.service
 
-read -p "Do you want to reboot? (y/n): " choice
-if [[ "$choice" == [Yy] ]]; then
-    sudo reboot
-else
-    echo "The reboot has been canceled."
-fi
+echo "The system need reboot . . ."
 
 exit 0
