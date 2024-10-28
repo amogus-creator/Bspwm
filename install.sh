@@ -35,6 +35,8 @@ chmod +x ~/display.sh
 
 chmod +x ~/cursor.sh
 
+chmod +x ~/cpu.sh
+
 #chmod +x ~ фаерфокс
 
 read -p "Do you want to set the custom screen parameters? (y/n): " choice
