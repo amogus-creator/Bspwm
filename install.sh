@@ -23,7 +23,7 @@ mv ~/Downloads/picom.conf ~/.config/picom
 
 #mv ~/Downloads/kitty.conf ~/.config/kitty
 
-mv ~/Downloads/x.jpg ~/wallpapers
+mv ~/Downloads/grass.jpg ~/wallpapers
 
 mv ~/Downloads/.xsession ~/
 
