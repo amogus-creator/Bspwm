@@ -18,27 +18,3 @@ echo "Создание символической ссылки..."
 sudo ln -s /opt/firefox/firefox /usr/local/bin/firefox
 
 echo "Firefox установлен успешно! Вы можете запустить его, введя 'firefox' в терминале."
-
-cd
-
-git clone https://github.com/vinceliuice/WhiteSur-firefox-theme
-
-cd ~/WhiteSur-firefox-theme
-
-./install.sh
-
-cd
-
-git clone https://github.com/amogus-creator/Firefox-theme
-
-cd
-
-cd Firefox-theme
-
-chmod +x custom-firefox.sh
-
-mv custom-firefox.sh ~/WhiteSur-firefox-theme
-
-cd ~/WhiteSur-firefox-theme
-
-./custom-firefox.sh
