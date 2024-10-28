@@ -37,7 +37,9 @@ chmod +x ~/cursor.sh
 
 chmod +x ~/cpu.sh
 
-#chmod +x ~ фаерфокс
+chmod +x ~/firefox-bin.sh
+
+chmod +x ~/
 
 read -p "Do you want to set the custom screen parameters? (y/n): " choice
 if [[ "$choice" == [Yy] ]]; then
