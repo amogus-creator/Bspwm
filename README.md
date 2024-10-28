@@ -1,3 +1,5 @@
 git clone https://github.com/amogus-creator/Bspwm ~/Downloads
 
-Working scripts -- ./install.sh , ./cursor.sh , ./display.sh | ./cursor.sh should be run after the first login, NOT from tty1 / 2 /. .
+./cursor.sh should be run after the first login, NOT from tty1 / 2 /. .
+
+./firefox-custom.sh start only after ./firefox-bin.sh , NOT fron tty1 / 2 /. .
