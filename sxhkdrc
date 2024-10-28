@@ -1,11 +1,11 @@
-F1
+super + w
   kitty
-F8 + F9
+ctrl + super + alt
   poweroff
 super + r
   ranger
 super + c
-  alacritty -e cava
+  kitty -e cava
 super + q
   firefox
 super + Left
