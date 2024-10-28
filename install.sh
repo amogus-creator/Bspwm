@@ -31,15 +31,15 @@ chmod +x ~/.config/bspwm/bspwmrc
 
 chmod +x ~/.xsession
 
-chmod +x ~/display.sh
+chmod +x ~/Downloads/display.sh
 
-chmod +x ~/cursor.sh
+chmod +x ~/Downloads/cursor.sh
 
-chmod +x ~/cpu.sh
+chmod +x ~/Downloads/cpu.sh
 
-chmod +x ~/firefox-bin.sh
+chmod +x ~/Downloads/firefox-bin.sh
 
-chmod +x ~/firefox-custom.sh
+chmod +x ~/Downloads/firefox-custom.sh
 
 read -p "Do you want to set the custom screen parameters? (y/n): " choice
 if [[ "$choice" == [Yy] ]]; then
