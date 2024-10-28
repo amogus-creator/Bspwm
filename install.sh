@@ -2,7 +2,7 @@
 
 cd ~/Downloads
 
-for pkg in bspwm kitty sxhkd vim ttf-dejavu picom feh gnome-keyring xorg-xsetroot xorg-xrandr; do
+for pkg in bspwm kitty sxhkd vim ttf-dejavu picom feh gnome-keyring xorg-xsetroot xorg-xrandr cpupower; do
     if ! pacman -Qs $pkg > /dev/null; then
         echo "Installation $pkg..."
         sleep 1
@@ -40,6 +40,14 @@ chmod +x ~/cursor.sh
 read -p "Do you want to set the custom screen parameters? (y/n): " choice
 if [[ "$choice" == [Yy] ]]; then
     ./display.sh
+    echo "The parameters have been set."
+else
+    echo "The installation of parameters has been skipped."
+fi
+
+read -p "Do you want to set the custom CPU parameters? (y/n): " choice
+if [[ "$choice" == [Yy] ]]; then
+    ./ПРОЦЕССОР.sh
     echo "The parameters have been set."
 else
     echo "The installation of parameters has been skipped."
