@@ -2,7 +2,7 @@
 
 cd ~/Downloads
 
-for pkg in bspwm kitty sxhkd vim ttf-dejavu picom feh gnome-keyring xorg-xsetroot xorg-xrandr cpupower; do
+for pkg in bspwm kitty sxhkd vim ttf-dejavu picom feh gnome-keyring xorg-xsetroot xorg-xrandr; do
     if ! pacman -Qs $pkg > /dev/null; then
         echo "Installation $pkg..."
         sleep 1
