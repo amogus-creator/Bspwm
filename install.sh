@@ -4,12 +4,12 @@ cd
 
 for pkg in bspwm alacritty sxhkd vim ttf-dejavu picom feh gnome-keyring xorg-xsetroot xorg-xrandr; do
     if ! pacman -Qs $pkg > /dev/null; then
-        echo "Установка $pkg..."
+        echo "Installation $pkg..."
         sleep 1
-        sudo pacman -S --noconfirm $pkg || { echo "Ошибка установки $pkg"; exit 1; }
+        sudo pacman -S --noconfirm $pkg || { echo "Installation error $pkg"; exit 1; }
         sleep 1
     else
-        echo "$pkg уже установлен."
+        echo "$pkg already installed."
         sleep 1
     fi
 done
